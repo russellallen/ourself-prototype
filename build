@@ -6,7 +6,7 @@ mkdir -p /self/transporter
 
 # Setup requirements
 cd /self/transporter
-git clone --depth 1 https://github.com/russellallen/self.git
+git clone -b dev --depth 1 https://github.com/russellallen/self.git
 cd self
 git checkout dev
 git pull
