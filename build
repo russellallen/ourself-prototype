@@ -6,18 +6,18 @@ mkdir -p /self/transporter
 
 # Setup requirements
 cd /self/transporter
-git clone https://github.com/russellallen/self.git
+git clone -depth 1 https://github.com/russellallen/self.git
 cd self
 git checkout dev
 git pull
 
 cd /self/transporter
-git clone https://github.com/russellallen/self-tmux.git
+git clone -depth 1 https://github.com/russellallen/self-tmux.git
 cd self-tmux
 git pull
 
 cd /self/transporter
-git clone https://github.com/russellallen/ourself-objects.git
+git clone -depth 1 https://github.com/russellallen/ourself-objects.git
 cd ourself-objects
 git pull
 
