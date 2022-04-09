@@ -1,0 +1,35 @@
+#!/bin/sh
+
+# Clean
+rm -r /self/transporter
+mkdir -p /self/transporter
+
+# Setup requirements
+cd /self/transporter
+git clone https://github.com/russellallen/self.git
+cd self
+git checkout dev
+git pull
+
+cd /self/transporter
+git clone https://github.com/russellallen/self-tmux.git
+cd self-tmux
+git pull
+
+cd /self/transporter
+git clone https://github.com/russellallen/ourself-objects.git
+cd ourself-objects
+git pull
+
+cd /self/transporter
+git clone https://github.com/russellallen/self-externalPrograms.git
+cd self-externalPrograms
+git pull
+
+cd /self
+
+SELF=Self
+BASE=/self/transporter/self/objects
+
+export DISPLAY=:0
+echo "desktop open. saveAs: 'snapshot'. quitNoSave" | $SELF -f $BASE/worldBuilder.self -f2 setup.self -b $BASE  -o morphic --resetXDisplays
